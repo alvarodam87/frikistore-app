@@ -1,28 +1,41 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './signin.html'
 })
 export class SigninComponent {
-  mostrarLogin = true;
+  isLogin = true; // Controla qué pestaña se ve
+  btnText = 'ENTRAR';
+  btnClass = 'btn-warning';
 
-  onLogin(form: NgForm) {
-    if (form.valid) {
-      console.log('Login datos:', form.value);
-      alert('¡Bienvenido de nuevo!');
+  switchTab(toLogin: boolean) {
+    this.isLogin = toLogin;
+    this.resetBtn();
+  }
+
+  procesarFormulario(tipo: string) {
+    if (tipo === 'login') {
+      this.btnText = '<i class="bi bi-hourglass-split me-2"></i>Cargando...';
+      setTimeout(() => {
+        // En un futuro aquí el Router redireccionará a Inicio
+        this.resetBtn();
+        alert('¡Login simulado exitoso!');
+      }, 1000);
+    } else {
+      this.btnText = '<i class="bi bi-check-circle me-2"></i>¡Cuenta Creada!';
+      this.btnClass = 'btn-success';
+      setTimeout(() => {
+        this.switchTab(true); // Cambia automáticamente a la pestaña de login
+      }, 1500);
     }
   }
 
-  onRegistro(form: NgForm) {
-    if (form.valid) {
-      console.log('Registro datos:', form.value);
-      alert('¡Cuenta creada con éxito!');
-      this.mostrarLogin = true;
-    }
+  resetBtn() {
+    this.btnText = this.isLogin ? 'ENTRAR' : 'CREAR CUENTA';
+    this.btnClass = 'btn-warning';
   }
 }

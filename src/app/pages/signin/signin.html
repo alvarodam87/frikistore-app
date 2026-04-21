@@ -2,57 +2,72 @@
   <div class="card border-0 shadow-lg overflow-hidden rounded-4 mx-auto" style="max-width: 900px;">
     <div class="row g-0">
       <div class="col-md-6 d-none d-md-block bg-black position-relative">
-        <img src="assets/img/fondoMarvel.jpg" alt="Fondo" class="img-fluid h-100 w-100" style="object-fit: cover; opacity: 0.6;">
+        <img src="assets/img/fondoMarvel.jpg" alt="Fondo FrikiStore" class="img-fluid h-100 w-100" style="object-fit: cover; opacity: 0.6;">
         <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
           <h2 class="text-white fw-bold mb-3">¡Únete a la tripulación!</h2>
-          <p class="text-light">Gestiona tus preventas y obtén descuentos exclusivos.</p>
+          <p class="text-light">Guarda tus favoritos, gestiona tus preventas y obtén descuentos exclusivos para nakamas.</p>
         </div>
       </div>
 
       <div class="col-md-6 bg-dark text-white p-4 p-lg-5">
-        <ul class="nav nav-pills nav-justified mb-4 gap-2">
-          <li class="nav-item">
+
+        <ul class="nav nav-pills nav-justified mb-4 gap-2" role="tablist">
+          <li class="nav-item" role="presentation">
             <button class="nav-link rounded-pill fw-bold"
-                    [ngClass]="mostrarLogin ? 'active bg-warning text-dark' : 'text-white border border-secondary'"
-                    (click)="mostrarLogin = true">Iniciar Sesión</button>
+                    [ngClass]="isLogin ? 'bg-warning text-dark' : 'text-white border border-secondary'"
+                    (click)="switchTab(true)">Iniciar Sesión</button>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" role="presentation">
             <button class="nav-link rounded-pill fw-bold"
-                    [ngClass]="!mostrarLogin ? 'active bg-warning text-dark' : 'text-white border border-secondary'"
-                    (click)="mostrarLogin = false">Crear Cuenta</button>
+                    [ngClass]="!isLogin ? 'bg-warning text-dark' : 'text-white border border-secondary'"
+                    (click)="switchTab(false)">Crear Cuenta</button>
           </li>
         </ul>
 
-        <div *ngIf="mostrarLogin">
-          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
-            <div class="mb-3">
-              <label class="small text-secondary fw-bold">Email</label>
-              <input type="email" class="form-control bg-light border-0" name="email" ngModel required email>
+        <div class="tab-content">
+          <div *ngIf="isLogin" class="fade-in">
+            <div class="text-center mb-4">
+              <h3 class="fw-bold">Bienvenido de nuevo</h3>
+              <p class="text-secondary small">Introduce tus datos para acceder</p>
             </div>
-            <div class="mb-4">
-              <label class="small text-secondary fw-bold">Contraseña</label>
-              <input type="password" class="form-control bg-light border-0" name="password" ngModel required>
-            </div>
-            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2" [disabled]="loginForm.invalid">ENTRAR</button>
-          </form>
-        </div>
+            <form (ngSubmit)="procesarFormulario('login')">
+              <div class="mb-3">
+                <label class="form-label small text-secondary fw-bold">Email</label>
+                <input type="email" class="form-control bg-light border-0 py-2" placeholder="tu@email.com" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label small text-secondary fw-bold">Contraseña</label>
+                <input type="password" class="form-control bg-light border-0 py-2" placeholder="••••••••" required>
+              </div>
+              <button type="submit" class="btn w-100 rounded-pill fw-bold py-2 mb-3" [ngClass]="btnClass">
+                <span [innerHTML]="btnText"></span>
+              </button>
+            </form>
+          </div>
 
-        <div *ngIf="!mostrarLogin">
-          <form #regForm="ngForm" (ngSubmit)="onRegistro(regForm)">
-            <div class="mb-3">
-              <label class="small text-secondary fw-bold">Nickname</label>
-              <input type="text" class="form-control bg-light border-0" name="nick" ngModel required minlength="3">
+          <div *ngIf="!isLogin" class="fade-in">
+            <div class="text-center mb-4">
+              <h3 class="fw-bold">Nuevo Nakama</h3>
+              <p class="text-secondary small">Rellena los datos para crear tu cuenta</p>
             </div>
-            <div class="mb-3">
-              <label class="small text-secondary fw-bold">Email</label>
-              <input type="email" class="form-control bg-light border-0" name="email" ngModel required email>
-            </div>
-            <div class="mb-4">
-              <label class="small text-secondary fw-bold">Contraseña</label>
-              <input type="password" class="form-control bg-light border-0" name="pass" ngModel required minlength="8">
-            </div>
-            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2" [disabled]="regForm.invalid">CREAR CUENTA</button>
-          </form>
+            <form (ngSubmit)="procesarFormulario('registro')">
+              <div class="mb-3">
+                <label class="form-label small text-secondary fw-bold">Nombre o Nickname</label>
+                <input type="text" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Ej: Zoro99" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-secondary fw-bold">Email</label>
+                <input type="email" class="form-control bg-light border-0 py-2 rounded-3" placeholder="tu@email.com" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label small text-secondary fw-bold">Contraseña</label>
+                <input type="password" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Mínimo 8 caracteres" required>
+              </div>
+              <button type="submit" class="btn w-100 rounded-pill fw-bold py-2" [ngClass]="btnClass">
+                <span [innerHTML]="btnText"></span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

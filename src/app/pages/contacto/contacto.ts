@@ -10,12 +10,23 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactoComponent {
   mensajeEnviado = false;
+  errorEnvio = false;
 
   enviarMensaje(form: NgForm) {
-    if (form.valid) {
-      this.mensajeEnviado = true;
-      form.resetForm();
-      setTimeout(() => this.mensajeEnviado = false, 4000);
+    if (form.invalid) {
+      this.errorEnvio = true;
+      this.mensajeEnviado = false;
+      return;
     }
+
+    // Si todo está bien
+    this.errorEnvio = false;
+    this.mensajeEnviado = true;
+    form.resetForm();
+
+    // Ocultar el mensaje de éxito después de 5 segundos
+    setTimeout(() => {
+      this.mensajeEnviado = false;
+    }, 5000);
   }
 }

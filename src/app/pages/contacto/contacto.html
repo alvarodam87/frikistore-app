@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="text-center mb-5">
     <h1 class="display-4 fw-bold">¿Tienes alguna <span class="text-warning">pregunta?</span></h1>
-    <p class="lead text-muted">Nuestro equipo de expertos te responderá en menos de 24 horas.</p>
+    <p class="lead text-muted">Nuestro equipo de expertos en coleccionismo te responderá en menos de 24 horas.</p>
   </div>
 
   <div class="row g-4 align-items-stretch">
@@ -9,7 +9,7 @@
       <div class="bg-dark text-white rounded-4 p-4 p-lg-5 h-100 d-flex flex-column justify-content-between shadow-sm">
         <div>
           <h2 class="fw-bold text-warning mb-4">Información de contacto</h2>
-          <p class="text-secondary mb-5">Estamos aquí para ayudarte con tu colección. ¡Escríbenos!</p>
+          <p class="text-secondary mb-5">Estamos aquí para ayudarte con tu colección. ¡No dudes en escribirnos!</p>
           <ul class="list-unstyled d-flex flex-column gap-4">
             <li class="d-flex align-items-center gap-3">
                             <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
@@ -26,7 +26,7 @@
                             </span>
               <div>
                 <p class="mb-0 fw-bold small text-uppercase text-secondary">Email</p>
-                <p class="mb-0">soporte@frikistore.es</p>
+                <a href="mailto:soporte@frikistore.es" class="text-white text-decoration-none">soporte@frikistore.es</a>
               </div>
             </li>
           </ul>
@@ -37,33 +37,44 @@
     <div class="col-lg-7">
       <div class="bg-white rounded-4 p-4 p-lg-5 h-100 shadow-sm border border-light">
         <h2 class="fw-bold mb-4">Envíanos un mensaje</h2>
-        <form #contactForm="ngForm" (ngSubmit)="enviarMensaje(contactForm)" novalidate>
+
+        <form #contactoForm="ngForm" (ngSubmit)="enviarMensaje(contactoForm)" novalidate>
           <div class="row g-3 mb-3">
             <div class="col-sm-6">
               <label class="form-label fw-bold small text-secondary">Nombre</label>
-              <input type="text" class="form-control bg-light border-0 py-2 px-3 rounded-3"
-                     name="name" ngModel required #name="ngModel"
-                     [ngClass]="{'is-invalid': name.invalid && name.touched}">
+              <input type="text" class="form-control bg-light border-0 py-2 px-3 rounded-3" name="nombre" ngModel required>
             </div>
             <div class="col-sm-6">
               <label class="form-label fw-bold small text-secondary">Email</label>
-              <input type="email" class="form-control bg-light border-0 py-2 px-3 rounded-3"
-                     name="email" ngModel required email #email="ngModel"
-                     [ngClass]="{'is-invalid': email.invalid && email.touched}">
+              <input type="email" class="form-control bg-light border-0 py-2 px-3 rounded-3" name="email" ngModel required>
             </div>
           </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold small text-secondary">Asunto</label>
+            <select class="form-select bg-light border-0 py-2 px-3 rounded-3" name="asunto" ngModel required>
+              <option value="" disabled>Selecciona un asunto...</option>
+              <option value="pedido">Consulta sobre pedido</option>
+              <option value="preventa">Información sobre preventas</option>
+            </select>
+          </div>
+
           <div class="mb-4">
             <label class="form-label fw-bold small text-secondary">Mensaje</label>
-            <textarea class="form-control bg-light border-0 py-2 px-3 rounded-3"
-                      name="message" rows="5" ngModel required #message="ngModel"
-                      [ngClass]="{'is-invalid': message.invalid && message.touched}"></textarea>
+            <textarea class="form-control bg-light border-0 py-2 px-3 rounded-3" rows="5" name="mensaje" ngModel required></textarea>
           </div>
-          <button type="submit" class="btn btn-warning w-100 fw-bold py-3 rounded-pill shadow-sm"
-                  [disabled]="contactForm.invalid">
+
+          <button type="submit" class="btn btn-warning w-100 fw-bold py-3 rounded-pill shadow-sm">
             <i class="bi bi-send-fill me-2"></i>Enviar Mensaje
           </button>
-          <div *ngIf="mensajeEnviado" class="alert alert-success mt-4 rounded-3">
-            <strong>¡Mensaje enviado!</strong> Te responderemos pronto. 🎉
+
+          <div *ngIf="mensajeEnviado" class="alert alert-success mt-4 d-flex align-items-center rounded-3">
+            <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+            <div><strong>¡Mensaje enviado!</strong><br>Te responderemos en menos de 24 horas. 🎉</div>
+          </div>
+          <div *ngIf="errorEnvio" class="alert alert-danger mt-4 d-flex align-items-center rounded-3">
+            <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+            <div><strong>Ups...</strong><br>Por favor, rellena todos los campos antes de enviar.</div>
           </div>
         </form>
       </div>
