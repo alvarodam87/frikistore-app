@@ -1,0 +1,60 @@
+<div class="container py-5">
+  <div class="card border-0 shadow-lg overflow-hidden rounded-4 mx-auto" style="max-width: 900px;">
+    <div class="row g-0">
+      <div class="col-md-6 d-none d-md-block bg-black position-relative">
+        <img src="assets/img/fondoMarvel.jpg" alt="Fondo" class="img-fluid h-100 w-100" style="object-fit: cover; opacity: 0.6;">
+        <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
+          <h2 class="text-white fw-bold mb-3">¡Únete a la tripulación!</h2>
+          <p class="text-light">Gestiona tus preventas y obtén descuentos exclusivos.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 bg-dark text-white p-4 p-lg-5">
+        <ul class="nav nav-pills nav-justified mb-4 gap-2">
+          <li class="nav-item">
+            <button class="nav-link rounded-pill fw-bold"
+                    [ngClass]="mostrarLogin ? 'active bg-warning text-dark' : 'text-white border border-secondary'"
+                    (click)="mostrarLogin = true">Iniciar Sesión</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link rounded-pill fw-bold"
+                    [ngClass]="!mostrarLogin ? 'active bg-warning text-dark' : 'text-white border border-secondary'"
+                    (click)="mostrarLogin = false">Crear Cuenta</button>
+          </li>
+        </ul>
+
+        <div *ngIf="mostrarLogin">
+          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+            <div class="mb-3">
+              <label class="small text-secondary fw-bold">Email</label>
+              <input type="email" class="form-control bg-light border-0" name="email" ngModel required email>
+            </div>
+            <div class="mb-4">
+              <label class="small text-secondary fw-bold">Contraseña</label>
+              <input type="password" class="form-control bg-light border-0" name="password" ngModel required>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2" [disabled]="loginForm.invalid">ENTRAR</button>
+          </form>
+        </div>
+
+        <div *ngIf="!mostrarLogin">
+          <form #regForm="ngForm" (ngSubmit)="onRegistro(regForm)">
+            <div class="mb-3">
+              <label class="small text-secondary fw-bold">Nickname</label>
+              <input type="text" class="form-control bg-light border-0" name="nick" ngModel required minlength="3">
+            </div>
+            <div class="mb-3">
+              <label class="small text-secondary fw-bold">Email</label>
+              <input type="email" class="form-control bg-light border-0" name="email" ngModel required email>
+            </div>
+            <div class="mb-4">
+              <label class="small text-secondary fw-bold">Contraseña</label>
+              <input type="password" class="form-control bg-light border-0" name="pass" ngModel required minlength="8">
+            </div>
+            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2" [disabled]="regForm.invalid">CREAR CUENTA</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,72 @@
-<p>contacto works!</p>
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">¿Tienes alguna <span class="text-warning">pregunta?</span></h1>
+    <p class="lead text-muted">Nuestro equipo de expertos te responderá en menos de 24 horas.</p>
+  </div>
+
+  <div class="row g-4 align-items-stretch">
+    <div class="col-lg-5">
+      <div class="bg-dark text-white rounded-4 p-4 p-lg-5 h-100 d-flex flex-column justify-content-between shadow-sm">
+        <div>
+          <h2 class="fw-bold text-warning mb-4">Información de contacto</h2>
+          <p class="text-secondary mb-5">Estamos aquí para ayudarte con tu colección. ¡Escríbenos!</p>
+          <ul class="list-unstyled d-flex flex-column gap-4">
+            <li class="d-flex align-items-center gap-3">
+                            <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                <i class="bi bi-geo-alt-fill text-dark fs-5"></i>
+                            </span>
+              <div>
+                <p class="mb-0 fw-bold small text-uppercase text-secondary">Dirección</p>
+                <p class="mb-0">Calle Friki 123, Valencia</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-center gap-3">
+                            <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                <i class="bi bi-envelope-fill text-dark fs-5"></i>
+                            </span>
+              <div>
+                <p class="mb-0 fw-bold small text-uppercase text-secondary">Email</p>
+                <p class="mb-0">soporte@frikistore.es</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="bg-white rounded-4 p-4 p-lg-5 h-100 shadow-sm border border-light">
+        <h2 class="fw-bold mb-4">Envíanos un mensaje</h2>
+        <form #contactForm="ngForm" (ngSubmit)="enviarMensaje(contactForm)" novalidate>
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label class="form-label fw-bold small text-secondary">Nombre</label>
+              <input type="text" class="form-control bg-light border-0 py-2 px-3 rounded-3"
+                     name="name" ngModel required #name="ngModel"
+                     [ngClass]="{'is-invalid': name.invalid && name.touched}">
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-bold small text-secondary">Email</label>
+              <input type="email" class="form-control bg-light border-0 py-2 px-3 rounded-3"
+                     name="email" ngModel required email #email="ngModel"
+                     [ngClass]="{'is-invalid': email.invalid && email.touched}">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="form-label fw-bold small text-secondary">Mensaje</label>
+            <textarea class="form-control bg-light border-0 py-2 px-3 rounded-3"
+                      name="message" rows="5" ngModel required #message="ngModel"
+                      [ngClass]="{'is-invalid': message.invalid && message.touched}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 fw-bold py-3 rounded-pill shadow-sm"
+                  [disabled]="contactForm.invalid">
+            <i class="bi bi-send-fill me-2"></i>Enviar Mensaje
+          </button>
+          <div *ngIf="mensajeEnviado" class="alert alert-success mt-4 rounded-3">
+            <strong>¡Mensaje enviado!</strong> Te responderemos pronto. 🎉
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
