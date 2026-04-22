@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router'; // <-- Importa esto
 
 @Component({
-  selector: 'app-footer',
-  imports: [],
-  templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  selector: 'app-navbar',
+  imports: [RouterLink, RouterLinkActive], // <-- Y añádelo aquí
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css'
 })
-export class Footer {}
+export class NavbarComponent { }
