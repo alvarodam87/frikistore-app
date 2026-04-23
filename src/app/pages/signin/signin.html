@@ -2,7 +2,7 @@
   <div class="card border-0 shadow-lg overflow-hidden rounded-4 mx-auto" style="max-width: 900px;">
     <div class="row g-0">
       <div class="col-md-6 d-none d-md-block bg-black position-relative">
-        <img src="assets/img/fondoMarvel.jpg" alt="Fondo FrikiStore" class="img-fluid h-100 w-100" style="object-fit: cover; opacity: 0.6;">
+        <img ngSrc="assets/images/fondoMarvel.jpg" width="728" height="410" alt="Fondo FrikiStore" class="img-fluid h-100 w-100" style="object-fit: cover; opacity: 0.6;" priority>
         <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-4">
           <h2 class="text-white fw-bold mb-3">¡Únete a la tripulación!</h2>
           <p class="text-light">Guarda tus favoritos, gestiona tus preventas y obtén descuentos exclusivos para nakamas.</p>
@@ -25,51 +25,56 @@
         </ul>
 
         <div class="tab-content">
-          <div *ngIf="isLogin" class="fade-in">
-            <div class="text-center mb-4">
-              <h3 class="fw-bold">Bienvenido de nuevo</h3>
-              <p class="text-secondary small">Introduce tus datos para acceder</p>
-            </div>
-            <form (ngSubmit)="procesarFormulario('login')">
-              <div class="mb-3">
-                <label class="form-label small text-secondary fw-bold">Email</label>
-                <input type="email" class="form-control bg-light border-0 py-2" placeholder="tu@email.com" required>
+          @if (isLogin) {
+            <div class="fade-in">
+              <div class="text-center mb-4">
+                <h3 class="fw-bold">Bienvenido de nuevo</h3>
+                <p class="text-secondary small">Introduce tus datos para acceder</p>
               </div>
-              <div class="mb-4">
-                <label class="form-label small text-secondary fw-bold">Contraseña</label>
-                <input type="password" class="form-control bg-light border-0 py-2" placeholder="••••••••" required>
-              </div>
-              <button type="submit" class="btn w-100 rounded-pill fw-bold py-2 mb-3" [ngClass]="btnClass">
-                <span [innerHTML]="btnText"></span>
-              </button>
-            </form>
-          </div>
 
-          <div *ngIf="!isLogin" class="fade-in">
-            <div class="text-center mb-4">
-              <h3 class="fw-bold">Nuevo Nakama</h3>
-              <p class="text-secondary small">Rellena los datos para crear tu cuenta</p>
+              <form (ngSubmit)="procesarFormulario('login')">
+                <div class="mb-3">
+                  <label class="form-label small text-secondary fw-bold">Email</label>
+                  <input type="email" name="email" class="form-control bg-light border-0 py-2" placeholder="tu@email.com" required ngModel>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label small text-secondary fw-bold">Contraseña</label>
+                  <input type="password" name="password" class="form-control bg-light border-0 py-2" placeholder="••••••••" required ngModel>
+                </div>
+                <button type="submit" class="btn w-100 rounded-pill fw-bold py-2 mb-3" [ngClass]="btnClass">
+                  <span [innerHTML]="btnText"></span>
+                </button>
+              </form>
             </div>
-            <form (ngSubmit)="procesarFormulario('registro')">
-              <div class="mb-3">
-                <label class="form-label small text-secondary fw-bold">Nombre o Nickname</label>
-                <input type="text" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Ej: Zoro99" required>
+          } @else {
+            <div class="fade-in">
+              <div class="text-center mb-4">
+                <h3 class="fw-bold">Nuevo Nakama</h3>
+                <p class="text-secondary small">Rellena los datos para crear tu cuenta</p>
               </div>
-              <div class="mb-3">
-                <label class="form-label small text-secondary fw-bold">Email</label>
-                <input type="email" class="form-control bg-light border-0 py-2 rounded-3" placeholder="tu@email.com" required>
-              </div>
-              <div class="mb-4">
-                <label class="form-label small text-secondary fw-bold">Contraseña</label>
-                <input type="password" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Mínimo 8 caracteres" required>
-              </div>
-              <button type="submit" class="btn w-100 rounded-pill fw-bold py-2" [ngClass]="btnClass">
-                <span [innerHTML]="btnText"></span>
-              </button>
-            </form>
+
+              <form (ngSubmit)="procesarFormulario('registro')">
+                <div class="mb-3">
+                  <label class="form-label small text-secondary fw-bold">Nombre o Nickname</label>
+                  <input type="text" name="nickname" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Ej: Zoro99" required ngModel>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small text-secondary fw-bold">Email</label>
+                  <input type="email" name="regEmail" class="form-control bg-light border-0 py-2 rounded-3" placeholder="tu@email.com" required ngModel>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label small text-secondary fw-bold">Contraseña</label>
+                  <input type="password" name="regPassword" class="form-control bg-light border-0 py-2 rounded-3" placeholder="Mínimo 8 caracteres" required ngModel>
+                </div>
+                <button type="submit" class="btn w-100 rounded-pill fw-bold py-2" [ngClass]="btnClass">
+                  <span [innerHTML]="btnText"></span>
+                </button>
+              </form>
+            </div>
+          }
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+

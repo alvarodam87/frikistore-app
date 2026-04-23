@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+// ASEGÚRATE DE QUE AQUÍ DIGA "App" (Mayúscula)
 export class App {
-  protected readonly title = signal('frikistore-app');
+  title = 'FrikiStore';
 }

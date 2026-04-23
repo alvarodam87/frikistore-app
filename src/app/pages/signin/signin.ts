@@ -1,11 +1,14 @@
+import {FormsModule} from '@angular/forms';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
+import {NgOptimizedImage} from '@angular/common';
+
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './signin.html'
+  imports: [CommonModule,FormsModule,NgOptimizedImage],
+  templateUrl: './signin.html',
 })
 export class SigninComponent {
   isLogin = true; // Controla qué pestaña se ve

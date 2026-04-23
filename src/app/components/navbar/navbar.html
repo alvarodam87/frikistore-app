@@ -1,1 +1,60 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 border-bottom border-warning border-2">
+  <div class="container-fluid px-5">
+
+    <a class="navbar-brand fw-bold fs-3 m-0" routerLink="/inicio">
+      <span class="text-warning">FRIKI</span> STORE
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center gap-4">
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold text-uppercase" routerLink="/inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold text-uppercase" routerLink="/catalogo">Catálogo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold text-uppercase" routerLink="/accesorios">Accesorios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white fw-bold text-uppercase" routerLink="/about-us">Nosotros</a>
+        </li>
+
+        <li class="nav-item ms-lg-2">
+          <a class="nav-link position-relative p-1" routerLink="/carrito">
+            <i class="bi bi-cart3 fs-4 text-warning"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">
+              {{ cartService.getCartCount() }}
+              <span class="visually-hidden">productos en carrito</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-warning rounded-pill px-4 fw-bold text-dark text-uppercase shadow-sm" routerLink="/login">
+            Mi Cuenta
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    @if (cartService.showNotification()) {
+      <div class="friki-toast shadow-lg border border-warning">
+        <div class="d-flex align-items-center gap-3">
+          <div class="icon-box bg-warning text-dark">
+            <i class="bi bi-check-lg fw-bold"></i>
+          </div>
+          <div>
+            <p class="m-0 fw-bold text-white text-uppercase small">¡Ítem Equipado!</p>
+            <p class="m-0 text-secondary extra-small">{{ cartService.lastAddedItem() }} añadido al equipo.</p>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</nav>

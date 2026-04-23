@@ -1,0 +1,13 @@
+.item-carrito {
+  transition: transform 0.2s ease;
+}
+
+.item-carrito:hover {
+  border-color: rgba(255, 193, 7, 0.4) !important;
+  transform: translateX(5px);
+}
+
+.border-dashed {
+  border-style: dashed !important;
+  border-width: 2px !important;
+}

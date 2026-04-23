@@ -1,24 +1,230 @@
-<section class="p-5 mb-4 bg-light rounded-3">
-  <div class="container-fluid py-5 text-center">
-    <h1 class="display-5 fw-bold">Bienvenido a Nuestro Proyecto</h1>
-    <p class="fs-4">Desarrollado con Angular y Bootstrap para la 3ra Evaluación.</p>
-    <button class="btn btn-primary btn-lg" type="button">Saber más</button>
-  </div>
-</section>
-
-<div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/img1.jpg" class="d-block w-100" alt="Slide 1">
+<main class="flex-grow-1">
+  <section class="hero-bg py-5 border-bottom border-warning border-2 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">⭐ Importación directa desde Japón</span>
+          <h1 class="display-3 fw-bold mb-4">Sube de nivel tu <span class="text-warning">colección</span></h1>
+          <p class="lead mb-4">Las piezas más exclusivas de tus series favoritas. 100% originales.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-warning btn-lg rounded-pill px-5 fw-bold border border-2 border-dark">Explorar catálogo</a>
+            <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">Novedades</a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img ngSrc="assets/images/superman2.jpg" width="1448" height="2048" class="img-fluid rounded-4 shadow border border-3 border-dark" alt="Superman Exclusive" priority>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="container">
-  <div class="row text-center">
-    <div class="col-md-4">
-      <h3>Calidad</h3>
-      <p>Descripción de nuestro servicio.</p>
+  <section class="container py-5">
+    <h2 class="text-center fw-bold mb-5 text-uppercase">Licencias Populares</h2>
+    <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+
+      <div class="col">
+        <div class="card p-3 border-2 border-dark shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-center w-100" style="height: 160px;">
+            <img ngSrc="assets/images/logoonepiece.png" width="180" height="180"
+                 style="object-fit: contain; max-height: 100%; width: auto;" alt="Logo One Piece">
+          </div>
+          <h5 class="fw-bold mt-3">One Piece</h5>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card p-3 border-2 border-dark shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-center w-100" style="height: 150px;">
+            <img ngSrc="assets/images/logozelda.jpg" width="160" height="160"
+                 style="object-fit: contain; max-height: 100%; width: auto;" alt="Logo Zelda">
+          </div>
+          <h5 class="fw-bold mt-3">Zelda</h5>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card p-3 border-2 border-dark shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-center w-100" style="height: 110px;">
+            <img ngSrc="assets/images/logodragonball.jpg" width="348" height="145"
+                 style="object-fit: contain; max-height: 100%; width: auto;" alt="Logo Dragon Ball">
+          </div>
+          <h5 class="fw-bold mt-3">Dragon Ball</h5>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card p-3 border-2 border-dark shadow-sm h-100 d-flex flex-column align-items-center justify-content-center">
+          <div class="d-flex align-items-center justify-content-center w-100" style="height: 160px;">
+            <img ngSrc="assets/images/logonaruto.jpg" width="650" height="650"
+                 style="object-fit: contain; max-height: 100%; width: auto;" alt="Logo Naruto">
+          </div>
+          <h5 class="fw-bold mt-3">Naruto</h5>
+        </div>
+      </div>
+
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="bg-light py-5 border-top border-dark">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5 text-uppercase">Lo más vendido</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+
+        <div class="col">
+          <div class="card h-100 border-2 border-dark shadow overflow-hidden">
+            <div class="d-flex align-items-center justify-content-center bg-white" style="height: 280px; padding: 15px;">
+              <img ngSrc="assets/images/figuraluffy.jpg" width="250" height="250"
+                   style="object-fit: contain; max-height: 100%; width: auto;" alt="Luffy Gear 5">
+            </div>
+            <div class="card-body text-center d-flex flex-column justify-content-between border-top border-dark bg-light">
+              <div>
+                <h5 class="card-title fw-bold">Luffy Gear 5</h5>
+                <p class="text-dark fw-bold bg-warning d-inline-block px-3 py-1 rounded shadow-sm">45.99€</p>
+              </div>
+              <button class="btn btn-dark w-100 mt-3 rounded-pill fw-bold">AGREGAR AL NAKAMA</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-2 border-dark shadow overflow-hidden">
+            <div class="d-flex align-items-center justify-content-center bg-white" style="height: 280px; padding: 15px;">
+              <img ngSrc="assets/images/figuraberserk.jpg" width="250" height="250"
+                   style="object-fit: contain; max-height: 100%; width: auto;" alt="Guts Berserk">
+            </div>
+            <div class="card-body text-center d-flex flex-column justify-content-between border-top border-dark bg-light">
+              <div>
+                <h5 class="card-title fw-bold">Guts (Berserk)</h5>
+                <p class="text-dark fw-bold bg-warning d-inline-block px-3 py-1 rounded shadow-sm">89.99€</p>
+              </div>
+              <button class="btn btn-dark w-100 mt-3 rounded-pill fw-bold">AGREGAR AL NAKAMA</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-2 border-dark shadow overflow-hidden">
+            <div class="d-flex align-items-center justify-content-center bg-white" style="height: 280px; padding: 15px;">
+              <img ngSrc="assets/images/figuraitachi.jpg" width="250" height="250"
+                   style="object-fit: contain; max-height: 100%; width: auto;" alt="Itachi Uchiha">
+            </div>
+            <div class="card-body text-center d-flex flex-column justify-content-between border-top border-dark bg-light">
+              <div>
+                <h5 class="card-title fw-bold">Itachi Uchiha</h5>
+                <p class="text-dark fw-bold bg-warning d-inline-block px-3 py-1 rounded shadow-sm">52.99€</p>
+              </div>
+              <button class="btn btn-dark w-100 mt-3 rounded-pill fw-bold">AGREGAR AL NAKAMA</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-2 border-dark shadow overflow-hidden">
+            <div class="d-flex align-items-center justify-content-center bg-white" style="height: 280px; padding: 15px;">
+              <img ngSrc="assets/images/figurazelda2.jpg" width="250" height="250"
+                   style="object-fit: contain; max-height: 100%; width: auto;" alt="Link Zelda">
+            </div>
+            <div class="card-body text-center d-flex flex-column justify-content-between border-top border-dark bg-light">
+              <div>
+                <h5 class="card-title fw-bold">Link (Zelda)</h5>
+                <p class="text-dark fw-bold bg-warning d-inline-block px-3 py-1 rounded shadow-sm">59.99€</p>
+              </div>
+              <button class="btn btn-dark w-100 mt-3 rounded-pill fw-bold">AGREGAR AL NAKAMA</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="novedades" class="container py-5 my-4">
+    <h2 class="section-title fw-bold mx-auto mb-5 text-center text-uppercase">Eventos y Testimonios</h2>
+    <div class="row g-4">
+
+      <div class="col-lg-8">
+        <div id="newsCarousel" class="carousel slide rounded-4 overflow-hidden border border-4 border-dark shadow h-100" data-bs-ride="carousel">
+          <div class="carousel-inner h-100">
+
+            <div class="carousel-item active h-100">
+              <div style="height: 400px; position: relative;" class="bg-dark">
+                <img ngSrc="assets/images/comiccon2.png"
+                     fill
+                     class="d-block w-100"
+                     alt="Comic Con 2026"
+                     style="object-fit: cover;"
+                     priority>
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded border border-warning p-3 mb-4">
+                  <h5 class="fw-bold mb-0 text-warning text-uppercase">Próximos Eventos: Comic Con 2026</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item h-100">
+              <div style="height: 400px; position: relative;" class="bg-dark">
+                <img ngSrc="assets/images/fondoMarvel.jpg"
+                     fill
+                     class="d-block w-100"
+                     alt="Colección Marvel"
+                     style="object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded border border-warning p-3 mb-4">
+                  <h5 class="fw-bold mb-0 text-warning text-uppercase">Nueva Colección Marvel</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark border border-2 border-warning rounded-circle p-3"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark border border-2 border-warning rounded-circle p-3"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card border border-3 border-dark shadow p-4 h-100 bg-white rounded-4">
+          <h5 class="fw-bold mb-4 text-uppercase border-bottom border-dark pb-2">Nuestros Nakamas</h5>
+          <div class="d-flex flex-column gap-4">
+
+            <div class="d-flex align-items-center gap-3">
+              <div style="width: 70px; height: 70px; position: relative; flex-shrink: 0;">
+                <img ngSrc="assets/images/yo20años.jpg"
+                     fill
+                     class="rounded-circle shadow-sm border border-2 border-dark"
+                     style="object-fit: cover;"
+                     alt="Carlos">
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">Carlos R.</h6>
+                <div class="text-warning small mb-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="small text-muted fst-italic mb-0 lh-sm">"La figura de Luffy llegó perfecta. ¡100% originales!"</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+              <div style="width: 70px; height: 70px; position: relative; flex-shrink: 0;">
+                <img ngSrc="assets/images/carla.png"
+                     fill
+                     class="rounded-circle shadow-sm border border-2 border-dark"
+                     style="object-fit: cover;"
+                     alt="Carla">
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">Carla M.</h6>
+                <div class="text-warning small mb-1">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                </div>
+                <p class="small text-muted fst-italic mb-0 lh-sm">"La mejor tienda, atención al cliente increíble."</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

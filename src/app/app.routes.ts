@@ -1,47 +1,27 @@
 import { Routes } from '@angular/router';
 
-// Los que hizo Álvaro (ajustados al nombre exacto de la clase)
-import { Inicio } from './pages/inicio/inicio';
-import { Catalogo } from './pages/catalogo/catalogo';
+// COMPONENTES
+import { Inicio } from './components/inicio/inicio';
+import { Catalogo } from './components/catalogo/catalogo';
+import { AboutUs } from './components/about-us/about-us';
+
+// PAGES (Asegúrate de que las rutas a las carpetas sean exactas)
 import { ProductoDetalle } from './pages/producto-detalle/producto-detalle';
 import { CarritoPago } from './pages/carrito-pago/carrito-pago';
-import { AboutUs } from './pages/about-us/about-us';
-
-// Los que hicimos nosotros (esos sí tenían "Component" en el nombre)
-import { ContactoComponent } from './pages/contacto/contacto';
+import { Contacto } from './pages/contacto/contacto';
 import { SigninComponent } from './pages/signin/signin';
 
 export const routes: Routes = [
-  // Rutas de Álvaro (Ajustadas)
-  { path: '',
-    component: Inicio
-  },
-  { path: 'catalogo',
-    component: Catalogo
-  },
-  { path: 'producto/:id',
-    component: ProductoDetalle
-  },
-  { path: 'carrito',
-    component: CarritoPago
-  },
-  { path: 'about-us',
-    component: AboutUs
-  },
-
-  // Tus rutas
-  { path: 'login',
-    component: SigninComponent
-  },
-  { path: 'registro',
-    component: SigninComponent
-  },
-  { path: 'contacto',
-    component: ContactoComponent
-  },
-
-  // Ruta por defecto
-  { path: '**'
-    , redirectTo: 'login'
-    , pathMatch: 'full' }
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'inicio', component: Inicio },
+  { path: 'catalogo', component: Catalogo },
+  { path: 'about-us', component: AboutUs },
+  // Usamos ProductoDetalle para la sección de accesorios como pediste
+  { path: 'accesorios', component: ProductoDetalle },
+  { path: 'producto/:id', component: ProductoDetalle },
+  { path: 'carrito', component: CarritoPago },
+  { path: 'login', component: SigninComponent },
+  { path: 'registro', component: SigninComponent },
+  { path: 'contacto', component: Contacto },
+  { path: '**', redirectTo: 'inicio' }
 ];

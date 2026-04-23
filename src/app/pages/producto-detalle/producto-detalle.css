@@ -1,0 +1,18 @@
+.card-accessory {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card-accessory:hover {
+  transform: translateY(-10px);
+  border-color: #ffc107 !important; /* El amarillo warning */
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.1) !important;
+}
+
+.card-img-top {
+  transition: transform 0.5s ease;
+}
+
+.card-accessory:hover .card-img-top {
+  transform: scale(1.1);
+}

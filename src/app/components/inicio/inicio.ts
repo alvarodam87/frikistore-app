@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './inicio.html',
-  styleUrl: './inicio.css',
+  styleUrls: ['./inicio.css'] // Asegúrate de que este archivo exista
 })
-export class Inicio {}
+export class Inicio {
+
+}

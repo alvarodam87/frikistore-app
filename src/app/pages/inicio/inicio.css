@@ -1,0 +1,18 @@
+/* Ajuste para que las licencias sean grandes */
+.license-card {
+  width: 100%; /* Ahora ocupa todo el ancho de su columna */
+  transition: transform 0.3s ease;
+}
+
+/* Mantenemos el efecto hover para que toda la página sea coherente */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #ffc107 !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Estilo para los títulos de las licencias */
+.card-body h5 {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}

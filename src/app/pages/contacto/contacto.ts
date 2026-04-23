@@ -8,7 +8,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   imports: [CommonModule, FormsModule],
   templateUrl: './contacto.html'
 })
-export class ContactoComponent {
+export class Contacto {
   mensajeEnviado = false;
   errorEnvio = false;
 
