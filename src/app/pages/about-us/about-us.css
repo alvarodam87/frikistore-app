@@ -1,0 +1,13 @@
+/* Para asegurar que no quede ningún margen blanco */
+:host {
+  display: block;
+  background-color: #212529; /* Color dark de Bootstrap */
+}
+
+.rounded-5 {
+  border-radius: 2.5rem !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}

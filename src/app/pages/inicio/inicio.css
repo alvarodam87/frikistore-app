@@ -1,3 +1,22 @@
+/* Selecciona la sección negra principal */
+.hero-bg {
+  width: 100vw;         /* 100% del ancho de la ventana del navegador */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;   /* Estos márgenes negativos fuerzan el estiramiento */
+  margin-right: -50vw;
+
+  background-color: #212529; /* El color oscuro */
+  padding: 60px 0;
+}
+
+/* El contenido interno (texto e imagen) debe seguir centrado */
+.hero-bg .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 /* Ajuste para que las licencias sean grandes */
 .license-card {
   width: 100%; /* Ahora ocupa todo el ancho de su columna */
