@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-
-// Importamos desde la carpeta 'pages' según tu estructura
 import { Inicio } from './pages/inicio/inicio';
 
 export const routes: Routes = [
@@ -11,7 +9,6 @@ export const routes: Routes = [
   },
   {
     path: 'catalogo',
-    // Usamos el catálogo que está en pages
     loadComponent: () => import('./pages/catalogo/catalogo').then((m) => m.Catalogo),
   },
   {
@@ -20,18 +17,18 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
+    // IMPORTANTE: Apuntamos a la carpeta components y al archivo login.ts
+    loadComponent: () => import('./components/login/login').then((m) => m.Login),
   },
   {
     path: 'about-us',
     loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
   },
   {
-    path: 'accesorios', // Lo que aparece en la URL y en el routerLink
+    path: 'accesorios',
     loadComponent: () =>
       import('./pages/producto-detalle/producto-detalle').then((m) => m.ProductoDetalle),
   },
-  { path: 'login', loadComponent: () => import('./pages/login/login').then((m) => m.Login) },
   {
     path: '**',
     redirectTo: '',

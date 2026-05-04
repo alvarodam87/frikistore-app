@@ -1,0 +1,29 @@
+/* Truco para que el fondo negro ocupe todo el ancho de la pantalla */
+.hero-bg {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Estilo para que las cards resalten más */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+  border-color: #ffc107 !important; /* Borde amarillo al pasar el mouse */
+}
+
+/* Ajuste de la imagen dentro de la card */
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
