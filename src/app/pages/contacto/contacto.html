@@ -1,83 +1,116 @@
-<div class="container py-5">
-  <div class="text-center mb-5">
-    <h1 class="display-4 fw-bold">¿Tienes alguna <span class="text-warning">pregunta?</span></h1>
-    <p class="lead text-muted">Nuestro equipo de expertos en coleccionismo te responderá en menos de 24 horas.</p>
-  </div>
+<section class="bg-dark text-white min-vh-100 py-5">
+  <div class="container">
+    <!-- CABECERA DEL COMPONENTE -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold text-uppercase">¿Tienes una <span class="text-warning">Consulta?</span></h1>
+      <p class="lead text-secondary">Nuestro consejo de sabios Nakamas te responderá en menos de 24 horas.</p>
+    </div>
 
-  <div class="row g-4 align-items-stretch">
-    <div class="col-lg-5">
-      <div class="bg-dark text-white rounded-4 p-4 p-lg-5 h-100 d-flex flex-column justify-content-between shadow-sm">
-        <div>
-          <h2 class="fw-bold text-warning mb-4">Información de contacto</h2>
-          <p class="text-secondary mb-5">Estamos aquí para ayudarte con tu colección. ¡No dudes en escribirnos!</p>
-          <ul class="list-unstyled d-flex flex-column gap-4">
-            <li class="d-flex align-items-center gap-3">
-                            <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                                <i class="bi bi-geo-alt-fill text-dark fs-5"></i>
-                            </span>
-              <div>
-                <p class="mb-0 fw-bold small text-uppercase text-secondary">Dirección</p>
-                <p class="mb-0">Calle Friki 123, Valencia</p>
+    <div class="row g-4 align-items-stretch">
+      <!-- COLUMNA IZQUIERDA: INFORMACIÓN DE LA EMPRESA / GESTOR -->
+      <div class="col-lg-5">
+        <div class="bg-dark border border-secondary border-opacity-50 rounded-4 p-4 p-lg-5 h-100 d-flex flex-column justify-content-between shadow-lg">
+          <div>
+            <h2 class="fw-bold text-warning mb-4">Canales Oficiales</h2>
+            <p class="text-light opacity-75 mb-5">Si prefieres el contacto directo, aquí tienes nuestras coordenadas en el mapa.</p>
+
+            <ul class="list-unstyled d-flex flex-column gap-4">
+              <!-- DIRECCIÓN -->
+              <li class="d-flex align-items-center gap-3">
+                <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
+                  <i class="bi bi-geo-alt-fill text-dark fs-4"></i>
+                </span>
+                <div>
+                  <p class="mb-0 fw-bold text-white text-uppercase small">Nuestra Base</p>
+                  <p class="mb-0 text-secondary">Calle Friki 123, 46000 Valencia, España</p>
+                </div>
+              </li>
+              <!-- EMAIL (CON CORRECCIÓN DE SÍMBOLO @) -->
+              <li class="d-flex align-items-center gap-3">
+                <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center shadow" style="width: 50px; height: 50px;">
+                  <i class="bi bi-envelope-at-fill text-dark fs-4"></i>
+                </span>
+                <div>
+                  <p class="mb-0 fw-bold text-white text-uppercase small">Paloma Mensajera</p>
+                  <a href="mailto:soporte@frikistore.es" class="text-secondary text-decoration-none">
+                    soporte&#64;frikistore.es
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- REDES SOCIALES -->
+          <div class="mt-5 border-top border-secondary border-opacity-25 pt-4">
+            <h6 class="text-warning fw-bold text-uppercase mb-3">Redes de la Tripulación</h6>
+            <div class="d-flex gap-3 fs-3">
+              <i class="bi bi-instagram cursor-pointer text-white"></i>
+              <i class="bi bi-tiktok cursor-pointer text-white"></i>
+              <i class="bi bi-discord cursor-pointer text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: FORMULARIO DE CONTACTO DINÁMICO -->
+      <div class="col-lg-7">
+        <div class="bg-dark border border-warning border-opacity-25 rounded-4 p-4 p-lg-5 h-100 shadow-lg">
+          <h2 class="fw-bold text-white mb-4">Envíanos un mensaje</h2>
+
+          <form #contactoForm="ngForm" (ngSubmit)="enviarMensaje(contactoForm)">
+            <div class="row g-3 mb-3">
+              <!-- NOMBRE -->
+              <div class="col-md-6">
+                <label class="form-label fw-bold text-white small">Tu Nombre Nakama *</label>
+                <input type="text" class="form-control bg-light border-0 py-2" name="nombre" ngModel required placeholder="Ej: Zoro">
               </div>
-            </li>
-            <li class="d-flex align-items-center gap-3">
-                            <span class="rounded-circle bg-warning d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                                <i class="bi bi-envelope-fill text-dark fs-5"></i>
-                            </span>
-              <div>
-                <p class="mb-0 fw-bold small text-uppercase text-secondary">Email</p>
-                <a href="mailto:soporte@frikistore.es" class="text-white text-decoration-none">soporte@frikistore.es</a>
+              <!-- EMAIL DE CONTACTO -->
+              <div class="col-md-6">
+                <label class="form-label fw-bold text-white small">Tu Email *</label>
+                <input type="email" class="form-control bg-light border-0 py-2" name="email" ngModel required placeholder="tu&#64;email.com">
               </div>
-            </li>
-          </ul>
+            </div>
+
+            <!-- MOTIVO (SELECT) -->
+            <div class="mb-3">
+              <label class="form-label fw-bold text-white small">Motivo de la consulta *</label>
+              <select class="form-select bg-light border-0 py-2" name="asunto" ngModel required>
+                <option value="" disabled selected>Selecciona un tema...</option>
+                <option value="pedido">Estado de mi pedido</option>
+                <option value="preventa">Dudas sobre preventas</option>
+                <option value="stock">Preguntar por una figura</option>
+                <option value="otros">Otros asuntos</option>
+              </select>
+            </div>
+
+            <!-- MENSAJE (TEXTAREA) -->
+            <div class="mb-4">
+              <label class="form-label fw-bold text-white small">Mensaje *</label>
+              <textarea class="form-control bg-light border-0 py-2" rows="5" name="mensaje" ngModel required placeholder="Escribe aquí tu mensaje..."></textarea>
+            </div>
+
+            <!-- BOTÓN DE ENVÍO -->
+            <button type="submit" class="btn btn-warning w-100 fw-bold py-3 rounded-pill shadow fs-5 text-dark" [disabled]="contactoForm.invalid">
+              <i class="bi bi-send-check-fill me-2"></i>ENVIAR MENSAJE
+            </button>
+
+            <!-- FEEDBACK DINÁMICO (ANGULAR 21) -->
+            @if (mensajeEnviado) {
+              <div class="alert alert-success mt-4 d-flex align-items-center rounded-3 bg-success border-0 text-white shadow">
+                <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+                <div><strong>¡Mensaje enviado con éxito!</strong><br>Nuestros expertos lo revisarán pronto.</div>
+              </div>
+            }
+
+            @if (errorEnvio && contactoForm.invalid) {
+              <div class="alert alert-danger mt-4 d-flex align-items-center rounded-3 bg-danger border-0 text-white shadow">
+                <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+                <div><strong>¡Faltan campos!</strong><br>Por favor, rellena todos los campos marcados con *.</div>
+              </div>
+            }
+          </form>
         </div>
       </div>
     </div>
-
-    <div class="col-lg-7">
-      <div class="bg-white rounded-4 p-4 p-lg-5 h-100 shadow-sm border border-light">
-        <h2 class="fw-bold mb-4">Envíanos un mensaje</h2>
-
-        <form #contactoForm="ngForm" (ngSubmit)="enviarMensaje(contactoForm)" novalidate>
-          <div class="row g-3 mb-3">
-            <div class="col-sm-6">
-              <label class="form-label fw-bold small text-secondary">Nombre</label>
-              <input type="text" class="form-control bg-light border-0 py-2 px-3 rounded-3" name="nombre" ngModel required>
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label fw-bold small text-secondary">Email</label>
-              <input type="email" class="form-control bg-light border-0 py-2 px-3 rounded-3" name="email" ngModel required>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label fw-bold small text-secondary">Asunto</label>
-            <select class="form-select bg-light border-0 py-2 px-3 rounded-3" name="asunto" ngModel required>
-              <option value="" disabled>Selecciona un asunto...</option>
-              <option value="pedido">Consulta sobre pedido</option>
-              <option value="preventa">Información sobre preventas</option>
-            </select>
-          </div>
-
-          <div class="mb-4">
-            <label class="form-label fw-bold small text-secondary">Mensaje</label>
-            <textarea class="form-control bg-light border-0 py-2 px-3 rounded-3" rows="5" name="mensaje" ngModel required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-warning w-100 fw-bold py-3 rounded-pill shadow-sm">
-            <i class="bi bi-send-fill me-2"></i>Enviar Mensaje
-          </button>
-
-          <div *ngIf="mensajeEnviado" class="alert alert-success mt-4 d-flex align-items-center rounded-3">
-            <i class="bi bi-check-circle-fill fs-4 me-3"></i>
-            <div><strong>¡Mensaje enviado!</strong><br>Te responderemos en menos de 24 horas. 🎉</div>
-          </div>
-          <div *ngIf="errorEnvio" class="alert alert-danger mt-4 d-flex align-items-center rounded-3">
-            <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
-            <div><strong>Ups...</strong><br>Por favor, rellena todos los campos antes de enviar.</div>
-          </div>
-        </form>
-      </div>
-    </div>
   </div>
-</div>
+</section>
