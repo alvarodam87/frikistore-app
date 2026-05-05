@@ -1,19 +1,24 @@
 :host {
   display: block;
+  /* Rompe el contenedor padre para expandirse a los bordes de la pantalla */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
   min-height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
   background-color: #0d0d0d;
 }
 
 .login-container {
   min-height: 100vh;
-  width: 100%;
+  width: 100% !important;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #0d0d0d;
+  /* Tus gradientes originales */
   background-image:
     radial-gradient(ellipse at 10% 40%, rgba(245, 196, 0, 0.18) 0%, transparent 50%),
     radial-gradient(ellipse at 90% 15%, rgba(226, 75, 74, 0.14) 0%, transparent 45%),
@@ -21,6 +26,7 @@
     radial-gradient(ellipse at 25% 85%, rgba(245, 196, 0, 0.08) 0%, transparent 40%);
   box-sizing: border-box;
   padding: 2rem;
+  overflow: hidden; /* Evita scrolls extraños */
 }
 
 form {
@@ -36,6 +42,7 @@ form {
     0 25px 70px rgba(0, 0, 0, 0.7);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 form::before {

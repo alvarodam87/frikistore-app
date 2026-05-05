@@ -1,0 +1,86 @@
+[
+  {
+    "nombre": "Goku Ultra Instinto",
+    "serie": "Dragon Ball Super",
+    "precio": 49.99,
+    "imagen": "/assets/images/goku-ultra.png",
+    "nuevo": true
+  },
+  {
+    "nombre": "Vegeta Super Saiyan",
+    "serie": "Dragon Ball Z",
+    "precio": 44.99,
+    "imagen": "/assets/images/vegeta.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Naruto Sage Mode",
+    "serie": "Naruto Shippuden",
+    "precio": 39.99,
+    "imagen": "/assets/images/naruto.png",
+    "nuevo": true
+  },
+  {
+    "nombre": "Monkey D. Luffy Gear 5",
+    "serie": "One Piece",
+    "precio": 54.99,
+    "imagen": "/assets/images/luffy.png",
+    "nuevo": true
+  },
+  {
+    "nombre": "Zoro Three Swords",
+    "serie": "One Piece",
+    "precio": 42.99,
+    "imagen": "/assets/images/zoro.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Levi Ackerman",
+    "serie": "Attack on Titan",
+    "precio": 47.99,
+    "imagen": "/assets/images/levi.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Itachi Uchiha",
+    "serie": "Naruto Shippuden",
+    "precio": 45.99,
+    "imagen": "/assets/images/itachi.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Tanjiro Kamado",
+    "serie": "Demon Slayer",
+    "precio": 38.99,
+    "imagen": "/assets/images/tanjiro.png",
+    "nuevo": true
+  },
+  {
+    "nombre": "Nezuko Kamado",
+    "serie": "Demon Slayer",
+    "precio": 36.99,
+    "imagen": "/assets/images/nezuko.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Saitama",
+    "serie": "One Punch Man",
+    "precio": 41.99,
+    "imagen": "/assets/images/saitama.png",
+    "nuevo": false
+  },
+  {
+    "nombre": "Eren Yeager",
+    "serie": "Attack on Titan",
+    "precio": 49.99,
+    "imagen": "/assets/images/eren.png",
+    "nuevo": true
+  },
+  {
+    "nombre": "Deku Full Cowling",
+    "serie": "My Hero Academia",
+    "precio": 43.99,
+    "imagen": "/assets/images/deku.png",
+    "nuevo": false
+  }
+]

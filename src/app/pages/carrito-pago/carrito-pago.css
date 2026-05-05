@@ -1,3 +1,26 @@
+:host {
+  display: block;
+  /* Fuerza la expansión a todo el ancho de la ventana */
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  background-color: #212529;
+}
+
+.seccion-carrito {
+  background-color: #212529 !important;
+  width: 100% !important;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+  overflow-x: hidden;
+}
+
+/* Estilos de tus items */
 .item-carrito {
   transition: transform 0.2s ease;
 }
@@ -10,4 +33,15 @@
 .border-dashed {
   border-style: dashed !important;
   border-width: 2px !important;
+}
+
+/* Contenedor de Bootstrap para mantener el contenido centrado */
+.seccion-carrito .container {
+  max-width: 1200px; /* Ajusta este ancho según tu preferencia */
+  margin: 0 auto !important;
+}
+
+/* Inputs con mejor visibilidad */
+.form-control::placeholder {
+  color: #999;
 }
