@@ -5,19 +5,14 @@ import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-producto-detalle',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage], // Necesario para ngSrc
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './producto-detalle.html',
-  styleUrl: './producto-detalle.css'
+  styleUrl: './producto-detalle.css',
 })
 export class ProductoDetalle {
   public cartService = inject(CartService);
 
-  // CORRECCIÓN: Ahora acepta los 3 datos que envías desde el HTML
   agregarAlCarrito(nombre: string, precio: number, imagen: string) {
-    this.cartService.addToCart({
-      name: nombre,
-      price: precio,
-      img: imagen
-    });
+    this.cartService.addToCart({ name: nombre, price: precio, img: imagen });
   }
 }

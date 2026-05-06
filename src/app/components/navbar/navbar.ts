@@ -11,6 +11,5 @@ import { CartService } from '../../services/cart.service';
   styleUrl: './navbar.css',
 })
 export class NavbarComponent {
-  // Usamos inject para el servicio del carrito
   public cartService = inject(CartService);
 }
