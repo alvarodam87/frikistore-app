@@ -1,37 +1,43 @@
-/* Selecciona la sección negra principal */
-.hero-bg {
-  width: 100vw;         /* 100% del ancho de la ventana del navegador */
+/* 1. HERO FULL WIDTH - alineado con la clase del HTML */
+.hero-full-wrapper {
+  width: 100vw !important;
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: -50vw;   /* Estos márgenes negativos fuerzan el estiramiento */
-  margin-right: -50vw;
-
-  background-color: #212529; /* El color oscuro */
-  padding: 60px 0;
+  margin-left: -50vw;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;              /* Quita el -24px, Bootstrap ya lo gestiona */
 }
 
-/* El contenido interno (texto e imagen) debe seguir centrado */
-.hero-bg .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-/* Ajuste para que las licencias sean grandes */
-.license-card {
-  width: 100%; /* Ahora ocupa todo el ancho de su columna */
-  transition: transform 0.3s ease;
+/* 2. TEXTOS */
+.hero-title-max {             /* ← tu HTML usa hero-title-max, no hero-title */
+  font-size: clamp(2.5rem, 6vw, 4.8rem) !important;
+  line-height: 1.1;
+  letter-spacing: -2px;
 }
 
-/* Mantenemos el efecto hover para que toda la página sea coherente */
-.card:hover {
-  transform: translateY(-8px);
-  border-color: #ffc107 !important;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+.hero-lead-max {              /* ← tu HTML usa hero-lead-max, no hero-lead */
+  font-size: 1.4rem !important;
+  max-width: 600px;
 }
 
-/* Estilo para los títulos de las licencias */
-.card-body h5 {
-  letter-spacing: 1px;
-  font-size: 1.1rem;
+/* 3. IMAGEN SUPERMAN */
+.hero-img-fix {
+  max-height: 580px !important;
+  width: auto !important;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.8));
+}
+
+/* 4. BOTONES */
+.btn-lg {
+  padding: 15px 35px !important;
+  font-size: 1.2rem !important;
+}
+
+/* 5. EVITAR SCROLL LATERAL */
+:host {
+  display: block;
+  overflow-x: hidden;
 }
