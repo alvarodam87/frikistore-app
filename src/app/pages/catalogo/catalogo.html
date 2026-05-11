@@ -1,45 +1,41 @@
-<main class="flex-grow-1 py-5 bg-dark text-white min-vh-100">
-  <section class="px-4 px-md-5">
-    <h1 class="fw-bold display-5 mb-5 text-center text-uppercase text-warning">Catálogo de Figuras</h1>
+<main class="py-5 bg-dark text-white min-vh-100">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="fw-bold display-4 text-warning">CATÁLOGO GEEK</h1>
+      <p class="lead text-secondary">Figuras de importación directa con certificado de autenticidad</p>
+    </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      @for (item of listaProductos; track item.id) {
+        <div class="col">
+          <div class="card h-100 bg-secondary bg-opacity-10 border-secondary border-opacity-25 shadow text-white">
 
-      @for (producto of listaProductos; track producto.nombre) {
-        <article class="col">
-
-          <div class="card h-100 bg-dark border-secondary border-opacity-25 shadow-lg text-white product-card">
-
-            <div class="position-relative p-3 d-flex align-items-center justify-content-center" style="height: 250px;">
-              @if (producto.nuevo) {
-                <span class="badge bg-danger position-absolute top-0 start-0 m-2 z-1">¡Nuevo!</span>
+            <div class="position-relative">
+              @if (item.nuevo) {
+                <span class="badge bg-danger position-absolute top-0 start-0 m-3 shadow">NUEVO</span>
               }
-
-              <img [ngSrc]="producto.imagen"
-                   width="300"
-                   height="250"
-                   class="img-fluid rounded-3"
-                   [alt]="'Figura de ' + producto.nombre"
-                   style="max-height: 100%; max-width: 100%; object-fit: contain;"
-                   priority>
+              <img [src]="item.imagen"
+                   class="card-img-top p-4 img-fluid"
+                   alt="{{item.nombre}}"
+                   style="height: 250px; object-fit: contain;">
             </div>
 
-            <div class="card-body text-center d-flex flex-column">
-              <h3 class="h6 card-title fw-bold text-uppercase mb-1 text-warning">{{producto.nombre}}</h3>
-              <p class="small text-secondary mb-3">{{producto.serie}}</p>
+            <div class="card-body d-flex flex-column text-center">
+              <h5 class="card-title fw-bold text-warning">{{item.nombre}}</h5>
+              <p class="small text-secondary text-uppercase mb-3">{{item.serie}}</p>
 
               <div class="mt-auto">
-                <p class="text-warning fw-bold fs-4 mb-3">{{producto.precio}}€</p>
+                <p class="fw-bold fs-4 mb-3">{{item.precio}}€</p>
 
-                <button (click)="agregarAlCarrito(producto.nombre, producto.precio, producto.imagen)"
-                        class="btn btn-warning w-100 rounded-pill fw-bold text-dark">
-                  <i class="bi bi-cart-plus me-1"></i> AÑADIR AL EQUIPO
-                </button>
+                <a [routerLink]="['/producto', item.id]"
+                   class="btn btn-warning w-100 rounded-pill fw-bold text-dark">
+                  VER MÁS
+                </a>
               </div>
             </div>
           </div>
-        </article>
+        </div>
       }
-
     </div>
-  </section>
+  </div>
 </main>
