@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Producto } from '../interfaces/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  // Esta ruta apunta a donde Álvaro debe crear el JSON
-  private jsonUrl = 'assets/productos.json';
+  private http = inject(HttpClient);
+  private jsonUrl = 'data/productos.json';
 
-  constructor(private http: HttpClient) { }
-
-  getProductos(): Observable<any[]> {
-    return this.http.get<any[]>(this.jsonUrl);
+  // Ahora el servicio sabe que devuelve un array de objetos tipo "Producto"
+  getProductos(): Observable<Producto[]> {
+    return this.http.get<Producto[]>(this.jsonUrl);
   }
 }
