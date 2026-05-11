@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center mb-5">
       <h1 class="fw-bold display-4 text-warning">CATÁLOGO GEEK</h1>
-      <p class="lead text-secondary">Figuras de importación directa con certificado de autenticidad</p>
+      <p class="lead text-secondary">Copiando el estilo que sí funciona</p>
     </div>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
@@ -14,7 +14,9 @@
               @if (item.nuevo) {
                 <span class="badge bg-danger position-absolute top-0 start-0 m-3 shadow">NUEVO</span>
               }
-              <img [src]="item.imagen"
+              <img [ngSrc]="item.imagen"
+                   width="400"
+                   height="400"
                    class="card-img-top p-4 img-fluid"
                    alt="{{item.nombre}}"
                    style="height: 250px; object-fit: contain;">
@@ -28,9 +30,13 @@
                 <p class="fw-bold fs-4 mb-3">{{item.precio}}€</p>
 
                 <a [routerLink]="['/producto', item.id]"
-                   class="btn btn-warning w-100 rounded-pill fw-bold text-dark">
+                   class="btn btn-warning w-100 rounded-pill fw-bold text-dark mb-2">
                   VER MÁS
                 </a>
+                <button (click)="agregarAlCarrito(item)"
+                        class="btn btn-outline-light w-100 rounded-pill fw-bold btn-sm">
+                  AÑADIR AL EQUIPO
+                </button>
               </div>
             </div>
           </div>

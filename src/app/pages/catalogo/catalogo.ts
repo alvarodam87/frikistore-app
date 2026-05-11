@@ -1,30 +1,37 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common'; // Asegúrate de esta línea
 import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
-import { Producto } from '../../interfaces/producto'; // Importamos tu nueva interfaz
+import { CartService } from '../../services/cart.service';
+import { Producto } from '../../interfaces/producto';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, RouterLink],
+  imports: [CommonModule, NgOptimizedImage, RouterLink], // NgOptimizedImage debe estar aquí
   templateUrl: './catalogo.html',
   styleUrl: './catalogo.css',
 })
 export class Catalogo implements OnInit {
-  // 1. Array vacío que se llenará con el JSON
+  private productosService = inject(ProductosService);
+  private cartService = inject(CartService);
+
   public listaProductos: Producto[] = [];
 
-  // 2. Inyectamos el servicio de productos
-  private productosService = inject(ProductosService);
-
   ngOnInit() {
-    // 3. Al iniciar, llamamos al servicio
     this.productosService.getProductos().subscribe({
       next: (data) => {
-        this.listaProductos = data; // Guardamos los 12 productos
+        this.listaProductos = data;
       },
-      error: (err) => console.error('Error al cargar productos:', err)
+      error: (err) => console.error('Error al leer el JSON:', err)
+    });
+  }
+
+  agregarAlCarrito(prod: Producto) {
+    this.cartService.addToCart({
+      name: prod.nombre,
+      price: prod.precio,
+      img: prod.imagen
     });
   }
 }

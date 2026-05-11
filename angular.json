@@ -22,13 +22,7 @@
             "polyfills": ["zone.js"],
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "src",
-                "output": "/"
-
-              }
+              "src/assets"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

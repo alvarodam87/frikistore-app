@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Producto } from '../interfaces/producto';
 
 @Injectable({
@@ -8,10 +8,17 @@ import { Producto } from '../interfaces/producto';
 })
 export class ProductosService {
   private http = inject(HttpClient);
-  private jsonUrl = 'data/productos.json';
 
-  // Ahora el servicio sabe que devuelve un array de objetos tipo "Producto"
+  // 👉 ESTA ES LA RUTA EXACTA QUE HAS COMPROBADO QUE FUNCIONA
+  private jsonUrl = '/assets/data/productos.json';
+
   getProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.jsonUrl);
+  }
+
+  getProductoById(id: number): Observable<Producto | undefined> {
+    return this.getProductos().pipe(
+      map(productos => productos.find(p => p.id === id))
+    );
   }
 }
