@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs'; // Añadimos forkJoin
 import { Producto } from '../interfaces/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  // Variable tal cual la pide el profe
   private URL: string = '/assets/data/productos.json';
+  private URL_ACCESORIOS: string = '/assets/data/accesorios.json';
 
-  // Inyección mediante constructor (estilo de las notas)
   constructor(private http: HttpClient) {}
 
   getProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.URL);
   }
 
-  getProductoById(id: number): Observable<Producto | undefined> {
-    return this.getProductos().pipe(
-      map(productos => productos.find(p => p.id === id))
+  getAccesorios(): Observable<any[]> {
+    return this.http.get<any[]>(this.URL_ACCESORIOS);
+  }
+
+
+  getProductoById(id: number): Observable<any | undefined> {
+    return forkJoin([this.getProductos(), this.getAccesorios()]).pipe(
+      map(([productos, accesorios]) => {
+        // Primero busca en figuras
+        const figura = productos.find(p => p.id === id);
+        if (figura) return figura;
+
+        // Si no lo encuentra, busca en accesorios
+        return accesorios.find(a => a.id === id);
+      })
     );
   }
 }

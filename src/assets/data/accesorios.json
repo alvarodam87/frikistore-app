@@ -1,0 +1,128 @@
+[
+  {
+    "id": 101,
+    "nombre": "Sombrero de Paja Luffy",
+    "categoria": "Ropa",
+    "precio": 14.99,
+    "imagen": "/assets/images/acce1.jpg"
+  },
+  {
+    "id": 102,
+    "nombre": "Colgante Exclusivo Anime",
+    "categoria": "Joyería",
+    "precio": 9.99,
+    "imagen": "/assets/images/acce2.jpg"
+  },
+  {
+    "id": 103,
+    "nombre": "Anillo de Colección",
+    "categoria": "Joyería",
+    "precio": 12.50,
+    "imagen": "/assets/images/acce3.jpg"
+  },
+  {
+    "id": 104,
+    "nombre": "Cartera Ninja Clásica",
+    "categoria": "Accesorios",
+    "precio": 15.00,
+    "imagen": "/assets/images/acce4.jpg"
+  },
+  {
+    "id": 105,
+    "nombre": "Capa Akatsuki (Cosplay)",
+    "categoria": "Cosplay",
+    "precio": 35.99,
+    "imagen": "/assets/images/disfraz.jpg"
+  },
+  {
+    "id": 106,
+    "nombre": "Bolsa de Tela FrikiStore",
+    "categoria": "Mochilas",
+    "precio": 18.99,
+    "imagen": "/assets/images/bolsa.jpg"
+  },
+  {
+    "id": 107,
+    "nombre": "Camiseta Anime Premium",
+    "categoria": "Ropa",
+    "precio": 22.00,
+    "imagen": "/assets/images/camiseta.png"
+  },
+  {
+    "id": 108,
+    "nombre": "Set 7 Bolas de Dragón",
+    "categoria": "Coleccionismo",
+    "precio": 29.99,
+    "imagen": "/assets/images/db.png"
+  },
+  {
+    "id": 109,
+    "nombre": "Figura Oferta Especial",
+    "categoria": "Destacado",
+    "precio": 19.99,
+    "imagen": "/assets/images/accesoriooferta.jpg"
+  },
+  {
+    "id": 110,
+    "nombre": "Sudadera Berserk",
+    "categoria": "Ropa",
+    "precio": 45.00,
+    "imagen": "/assets/images/sudaderaberserk.jpg"
+  },
+  {
+    "id": 111,
+    "nombre": "Gorra Clásica",
+    "categoria": "Ropa",
+    "precio": 15.99,
+    "imagen": "/assets/images/gorra.jpg"
+  },
+  {
+    "id": 112,
+    "nombre": "Gorra Edición Especial",
+    "categoria": "Ropa",
+    "precio": 17.99,
+    "imagen": "/assets/images/gorra1.jpg"
+  },
+  {
+    "id": 113,
+    "nombre": "Gorra Variante V2",
+    "categoria": "Ropa",
+    "precio": 16.50,
+    "imagen": "/assets/images/gorra.2jpg.jpg"
+  },
+  {
+    "id": 114,
+    "nombre": "Gorra Variante V3",
+    "categoria": "Ropa",
+    "precio": 16.50,
+    "imagen": "/assets/images/gorra.2jpg.webp"
+  },
+  {
+    "id": 115,
+    "nombre": "Gorra Variante V4",
+    "categoria": "Ropa",
+    "precio": 18.00,
+    "imagen": "/assets/images/gorra.3jpg.webp"
+  },
+  {
+    "id": 116,
+    "nombre": "Réplica Kunai Ninja",
+    "categoria": "Cosplay",
+    "precio": 12.99,
+    "imagen": "/assets/images/kunai.jpg"
+  },
+  {
+    "id": 117,
+    "nombre": "Mochila Escolar Anime",
+    "categoria": "Mochilas",
+    "precio": 34.99,
+    "imagen": "/assets/images/mochila.jpg"
+  },
+  {
+    "id": 118,
+    "nombre": "Ilustración Naruto Especial",
+    "categoria": "Coleccionismo",
+    "precio": 8.50,
+    "imagen": "/assets/images/naruto.png"
+  }
+]

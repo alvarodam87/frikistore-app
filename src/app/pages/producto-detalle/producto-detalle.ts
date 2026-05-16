@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { CartService } from '../../services/cart.service';
-import { Producto } from '../../interfaces/producto';
+
 
 @Component({
   selector: 'app-producto-detalle',
@@ -15,7 +15,7 @@ export class ProductoDetalle implements OnInit {
   // Paso 0 de las notas: Atrapamos el ID de la URL
   @Input('id') id!: string;
 
-  public producto: Producto | undefined;
+  public producto: any;
 
   constructor(
     private serviceProductos: ProductosService,

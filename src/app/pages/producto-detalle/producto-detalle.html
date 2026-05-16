@@ -12,10 +12,11 @@
             <span class="badge bg-danger mb-3 align-self-start fs-6 shadow">¡NOVEDAD!</span>
           }
           <h1 class="display-5 fw-bold text-warning mb-2">{{ producto.nombre }}</h1>
-          <h4 class="text-secondary text-uppercase mb-4">{{ producto.serie }}</h4>
+
+          <h4 class="text-secondary text-uppercase mb-4">{{ producto.serie || producto.categoria }}</h4>
 
           <p class="fs-5 mb-4 opacity-75">
-            Figura exclusiva de importación directa. 100% original con certificado de autenticidad.
+            Artículo exclusivo de importación. 100% original con certificado de autenticidad.
           </p>
 
           <p class="display-4 fw-bold mb-4">{{ producto.precio }}€</p>
