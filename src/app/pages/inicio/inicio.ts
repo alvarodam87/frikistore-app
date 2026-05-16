@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLink} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router'; // 1. IMPORTACIÓN OBLIGATORIA
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [RouterLink, CommonModule, NgOptimizedImage], // <--- AQUÍ
+  imports: [CommonModule, RouterLink], // 2. AÑADIRLO EN LOS IMPORTS
   templateUrl: './inicio.html',
+  styleUrl: './inicio.css'
 })
 export class Inicio {
   // Lista para la sección de Licencias Populares

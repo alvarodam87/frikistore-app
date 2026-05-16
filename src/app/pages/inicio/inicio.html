@@ -1,23 +1,16 @@
 <main class="flex-grow-1 bg-light" style="overflow-x: hidden;">
 
-  <!-- SECCIÓN HERO -->
   <section class="bg-dark text-white border-bottom border-warning border-3"
            style="position: relative; height: 420px; overflow: hidden;">
 
-    <!-- Imagen de fondo full width -->
-    <img ngSrc="assets/images/superman2.jpg"
-         width="1600"
-         height="420"
+    <img src="/assets/images/superman2.jpg"
          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                 object-fit: contain; object-position: 85% center; display: block;"
-         alt="Superman Exclusive"
-         priority>
+         alt="Superman Exclusive">
 
-    <!-- Degradado oscuro solo en la mitad izquierda para que el texto sea legible -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                 background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.05) 100%);"></div>
 
-    <!-- Contenido alineado a la izquierda -->
     <div style="position: relative; z-index: 1; height: 100%; max-width: 1320px;
                 margin: 0 auto; display: flex; align-items: center; padding: 0 3rem;">
       <div style="max-width: 480px;">
@@ -50,7 +43,7 @@
           <div class="col d-flex justify-content-center">
             <div class="card h-100 border-2 border-dark rounded-4 overflow-hidden shadow-sm w-100">
               <div class="d-flex align-items-center justify-content-center p-4" style="height: 250px; background: white;">
-                <img [ngSrc]="licencia.imagen" width="400" height="400" [alt]="licencia.nombre" class="img-fluid" style="max-height: 200px; width: auto; object-fit: contain;">
+                <img [src]="licencia.imagen" [alt]="licencia.nombre" class="img-fluid" style="max-height: 200px; width: auto; object-fit: contain;">
               </div>
               <div class="card-body bg-light border-top border-dark text-center py-3">
                 <h5 class="fw-bold mb-0 text-uppercase">{{ licencia.nombre }}</h5>
@@ -62,7 +55,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN LO MÁS VENDIDO -->
   <section class="bg-white py-5 border-top border-dark">
     <div class="container">
       <h2 class="text-center fw-bold mb-5 text-uppercase">Lo más vendido</h2>
@@ -71,7 +63,7 @@
           <div class="col">
             <div class="card h-100 border-2 border-dark shadow rounded-4 overflow-hidden product-card">
               <div class="bg-white d-flex align-items-center justify-content-center p-2" style="height: 250px;">
-                <img [ngSrc]="prod.imagen" width="400" height="400" class="img-fluid" [alt]="prod.nombre" style="max-height: 220px; object-fit: contain;">
+                <img [src]="prod.imagen" class="img-fluid" [alt]="prod.nombre" style="max-height: 220px; object-fit: contain;">
               </div>
               <div class="card-body text-center border-top border-dark d-flex flex-column justify-content-between">
                 <h5 class="card-title fw-bold small text-uppercase mb-2">{{ prod.nombre }}</h5>
@@ -87,7 +79,6 @@
     </div>
   </section>
 
-  <!-- EVENTOS Y TESTIMONIOS -->
   <section class="container py-5">
     <h2 class="text-center fw-bold mb-5 text-uppercase">Eventos y Testimonios</h2>
     <div class="row g-4">
@@ -99,13 +90,13 @@
           </div>
           <div class="carousel-inner h-100">
             <div class="carousel-item active h-100" data-bs-interval="5000">
-              <img ngSrc="assets/images/comiccon2.png" width="800" height="450" class="d-block w-100 h-100" style="object-fit: cover;" alt="Comic Con 2026">
+              <img src="/assets/images/comiccon2.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Comic Con 2026">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded border border-warning">
                 <h5 class="text-warning fw-bold mb-0 text-uppercase">Próximos Eventos: Comic Con 2026</h5>
               </div>
             </div>
             <div class="carousel-item h-100" data-bs-interval="5000">
-              <img ngSrc="assets/images/fondoMarvel.jpg" width="800" height="450" class="d-block w-100 h-100" style="object-fit: cover;" alt="Colección Marvel">
+              <img src="/assets/images/fondoMarvel.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Colección Marvel">
               <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded border border-warning">
                 <h5 class="text-warning fw-bold mb-0 text-uppercase">Nueva Colección Marvel Disponible</h5>
               </div>
@@ -125,7 +116,7 @@
           <h5 class="fw-bold mb-4 text-uppercase border-bottom border-dark pb-2">Nuestros Nakamas</h5>
           <div class="d-flex flex-column gap-4">
             <div class="d-flex align-items-start gap-3">
-              <img ngSrc="assets/images/yo20años.jpg" width="80" height="80" class="rounded-circle border border-2 border-dark" style="width: 80px; height: 80px; object-fit: cover;">
+              <img src="/assets/images/yo20años.jpg" class="rounded-circle border border-2 border-dark" style="width: 80px; height: 80px; object-fit: cover;">
               <div>
                 <h6 class="mb-0 fw-bold">Carlos R.</h6>
                 <div class="text-warning small">★★★★★</div>
@@ -134,7 +125,7 @@
             </div>
             <hr class="my-0 border-dark opacity-25">
             <div class="d-flex align-items-start gap-3">
-              <img ngSrc="assets/images/carla.png" width="80" height="80" class="rounded-circle border border-2 border-dark" style="width: 80px; height: 80px; object-fit: cover;">
+              <img src="/assets/images/carla.png" class="rounded-circle border border-2 border-dark" style="width: 80px; height: 80px; object-fit: cover;">
               <div>
                 <h6 class="mb-0 fw-bold">Carla M.</h6>
                 <div class="text-warning small">★★★★★</div>
@@ -143,6 +134,18 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5 border-top border-dark">
+    <div class="card border-3 border-dark shadow rounded-4 p-5 bg-white text-center">
+      <h2 class="fw-bold mb-3 text-uppercase">¿No tienes cuenta?</h2>
+      <p class="fs-4 mb-4 text-muted">¡Únete a la tripulación de FrikiStore y no te pierdas ninguna novedad!</p>
+      <div>
+        <a routerLink="/registro" class="btn btn-warning rounded-pill px-5 py-3 fw-bold border border-2 border-dark shadow fs-5 text-dark">
+          ¡ÚNETE A LA TRIPULACIÓN!
+        </a>
       </div>
     </div>
   </section>

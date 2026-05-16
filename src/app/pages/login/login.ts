@@ -1,16 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { RouterLink } from '@angular/router'; //
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './login.html', // ← sin "component" en el nombre
-  styleUrl: './login.css', // ← sin "component" en el nombre
+  imports: [ReactiveFormsModule, CommonModule, RouterLink], // <-- Añadido aquí
+  templateUrl: './login.html',
+  styleUrl: './login.css',
 })
 export class Login {
-  // ← Login, no LoginComponent
   loginForm: FormGroup;
   isLoading = signal(false);
   errorMessage = signal('');
@@ -33,4 +32,3 @@ export class Login {
     }, 1500);
   }
 }
-

@@ -1,1 +1,53 @@
-<p>registro works!</p>
+<main class="d-flex justify-content-center align-items-center min-vh-100 bg-dark py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-5">
+
+        <div class="card bg-secondary bg-opacity-10 border-warning border-opacity-50 text-white shadow-lg rounded-4">
+          <div class="card-body p-5">
+
+            <div class="text-center mb-4">
+              <h2 class="fw-bold text-warning">Únete a FrikiStore</h2>
+              <p class="text-light opacity-75">Crea tu cuenta para guardar tu equipo y tus compras.</p>
+            </div>
+
+            <form (submit)="registrarUsuario(); $event.preventDefault()">
+
+              <div class="mb-3">
+                <label for="usuario" class="form-label text-warning fw-bold">Nombre Friki (Usuario)</label>
+                <input type="text" class="form-control bg-dark text-white border-secondary" id="usuario" placeholder="Ej: Kirito99" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label text-warning fw-bold">Correo Electrónico</label>
+                <input type="email" class="form-control bg-dark text-white border-secondary" id="email" placeholder="tu@correo.com" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label text-warning fw-bold">Contraseña</label>
+                <input type="password" class="form-control bg-dark text-white border-secondary" id="password" placeholder="******" required>
+              </div>
+
+              <div class="mb-4">
+                <label for="passwordConf" class="form-label text-warning fw-bold">Repetir Contraseña</label>
+                <input type="password" class="form-control bg-dark text-white border-secondary" id="passwordConf" placeholder="******" required>
+              </div>
+
+              <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold rounded-pill mb-4 shadow-sm">
+                CREAR CUENTA
+              </button>
+
+              <div class="text-center mt-3 border-top border-secondary pt-3">
+                <p class="mb-0 text-light">¿Ya eres parte del gremio? <br>
+                  <a routerLink="/login" class="text-warning text-decoration-none fw-bold fs-5">Inicia sesión aquí</a>
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
