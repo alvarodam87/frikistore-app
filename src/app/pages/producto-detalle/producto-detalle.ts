@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { CartService } from '../../services/cart.service';
 import { Producto } from '../../interfaces/producto';
@@ -12,21 +12,34 @@ import { Producto } from '../../interfaces/producto';
   templateUrl: './producto-detalle.html'
 })
 export class ProductoDetalle implements OnInit {
-  private route = inject(ActivatedRoute);
-  private productosService = inject(ProductosService);
-  private cartService = inject(CartService);
+  // Paso 0 de las notas: Atrapamos el ID de la URL
+  @Input('id') id!: string;
 
   public producto: Producto | undefined;
 
-  ngOnInit() {
-    // 1. Leemos el ID de la URL
-    const idParam = this.route.snapshot.paramMap.get('id');
-    const id = idParam ? Number(idParam) : 0;
+  constructor(
+    private serviceProductos: ProductosService,
+    private cartService: CartService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
-    // 2. Buscamos el producto en el JSON
-    this.productosService.getProductoById(id).subscribe({
-      next: (data) => this.producto = data,
-      error: (e) => console.error('Error al cargar detalle:', e)
+  ngOnInit(): void {
+    this.getDetalle();
+  }
+
+  // Paso 2 de las notas: Lógica de carga
+  private getDetalle() {
+    // Convertimos el ID de la URL a número
+    const idConvertido = Number(this.id);
+
+    this.serviceProductos.getProductoById(idConvertido).subscribe({
+      next: (data) => {
+        this.producto = data;
+        console.log("Detalle cargado:", this.producto);
+        this.cdr.detectChanges();
+      },
+      error: (err) => console.error("Error al cargar personaje:", err),
+      complete: () => console.info('Carga de detalle completada.')
     });
   }
 

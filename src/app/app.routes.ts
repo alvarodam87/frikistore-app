@@ -46,7 +46,8 @@ export const routes: Routes = [
   {
     path: 'accesorios',
     title: 'Accesorios Especiales',
-    loadComponent: () => import('./pages/producto-detalle/producto-detalle').then((m) => m.ProductoDetalle),
+    // ESTO ES LO QUE TIENES QUE CAMBIAR 👇
+    loadComponent: () => import('./pages/accesorios/accesorios').then((m) => m.Accesorios),
   },
   // PASO 7.2: COMPONENTE 404 (En lugar del redirectTo)
   {
