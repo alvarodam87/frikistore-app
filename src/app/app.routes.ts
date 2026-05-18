@@ -4,8 +4,8 @@ import { Inicio } from './pages/inicio/inicio';
 export const routes: Routes = [
   {
     path: '',
-    component: Inicio,
-    title: 'FrikiStore - Inicio',
+    redirectTo: '/inicio',
+    pathMatch: 'full',
   },
   {
     path: 'inicio',
