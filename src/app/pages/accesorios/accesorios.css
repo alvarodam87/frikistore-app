@@ -1,0 +1,20 @@
+.resplandor-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.transition-scale {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.transition-scale:hover:not(:disabled) {
+  transform: scale(1.05);
+  background-color: #ffca2c;
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3) !important;
+}

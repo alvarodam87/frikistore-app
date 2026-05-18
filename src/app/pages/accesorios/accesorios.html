@@ -1,1 +1,26 @@
-<p>accesorios works!</p>
+<main class="py-5 bg-dark text-white min-vh-100">
+  <div class="container">
+    <h1 class="text-center text-warning fw-bold mb-2">ACCESORIOS GEEK</h1>
+    <p class="text-center text-secondary mb-5">Los complementos que todo friki necesita</p>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      @for (acc of listaAccesorios; track acc.id) {
+        <div class="col">
+          <div class="card h-100 bg-secondary bg-opacity-10 border border-secondary text-white rounded-4 shadow">
+            <img [src]="acc.imagen" class="card-img-top rounded-top-4"
+                 [alt]="acc.nombre" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title text-warning fw-bold">{{ acc.nombre }}</h5>
+              <p class="text-secondary text-uppercase small">{{ acc.categoria }}</p>
+              <p class="fs-5 fw-bold mt-auto">{{ acc.precio }}€</p>
+              <button (click)="agregarAlCarrito(acc)"
+                      class="btn btn-warning fw-bold rounded-pill w-100 mt-2">
+                <i class="bi bi-cart-plus me-2"></i> AÑADIR AL EQUIPO
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</main>
