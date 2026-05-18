@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { CartService } from '../../services/cart.service';
@@ -8,7 +7,7 @@ import { Producto } from '../../common/producto';
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: './catalogo.html'
 })
 export class Catalogo implements OnInit {
