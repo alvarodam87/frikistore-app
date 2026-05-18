@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { CartService } from '../../services/cart.service';
-import { Producto } from '../../interfaces/producto';
+import { Producto } from '../../common/producto';
 
 @Component({
   selector: 'app-catalogo',
