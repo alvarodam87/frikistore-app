@@ -7,8 +7,8 @@ import { Producto } from '../common/producto';
   providedIn: 'root'
 })
 export class ProductosService {
-  private URL: string = '/assets/data/productos.json';
-  private URL_ACCESORIOS: string = '/assets/data/accesorios.json';
+  private URL: string = 'assets/data/productos.json';
+  private URL_ACCESORIOS: string = 'assets/data/accesorios.json';
 
   constructor(private http: HttpClient) {}
 

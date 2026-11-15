@@ -41,3 +41,29 @@
   display: block;
   overflow-x: hidden;
 }
+
+/* Portada en móvil: más contraste y menos márgenes para que el texto se lea bien */
+@media (max-width: 767px) {
+  .hero-home-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.7)) !important;
+  }
+
+  .hero-home-content {
+    padding: 0 1.25rem !important;
+  }
+
+  .hero-home-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-home-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem !important;
+  }
+
+  .hero-home-actions .btn {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    white-space: nowrap;
+  }
+}

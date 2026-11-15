@@ -49,6 +49,11 @@ export const routes: Routes = [
     // ESTO ES LO QUE TIENES QUE CAMBIAR 👇
     loadComponent: () => import('./pages/accesorios/accesorios').then((m) => m.Accesorios),
   },
+  {
+    path: 'contacto',
+    title: 'Contacto - Friki Store',
+    loadComponent: () => import('./pages/contacto/contacto').then((m) => m.Contacto),
+  },
   // PASO 7.2: COMPONENTE 404 (En lugar del redirectTo)
   {
     path: '**',

@@ -1,13 +1,12 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
 import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-accesorios',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './accesorios.html',
   styleUrl: './accesorios.css'
 })

@@ -1,59 +1,87 @@
-# FrikistoreApp
+# Friki Store 🛒
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Tienda online de figuras de anime, cómics y merchandising friki, desarrollada con **Angular 21** y **Bootstrap 5**.
 
-## Development server
+**Demo:** https://alvarodam87.github.io/frikistore-app/
 
-To start a local development server, run:
+> Proyecto académico de desarrollo web. Es una tienda ficticia: no se venden productos reales ni se procesan pagos.
 
-```bash
-ng serve
+![Página de inicio](docs/screenshots/inicio.png)
+
+## Funcionalidades
+
+- **Catálogo de figuras** cargado desde un JSON con `HttpClient` y un servicio propio (`ProductosService`).
+- **Ficha de producto** con ruta dinámica (`/producto/:id`).
+- **Página de accesorios** (ropa, joyería, cosplay...) con su propio listado.
+- **Carrito** gestionado con **Signals** de Angular: añadir y quitar productos, contador en el menú, total del pedido y aviso emergente al añadir.
+- **Proceso de compra** con datos de envío y varios métodos de pago (tarjeta, PayPal, Bizum), solo como simulación.
+- **Formularios con validación**: login con *Reactive Forms*, contacto con *Template-driven forms*, y registro.
+- **Carga diferida (lazy loading)** de las páginas con `loadComponent` y títulos de pestaña por ruta.
+- **Página 404** personalizada para rutas que no existen.
+- **Diseño responsive** con Bootstrap y menú adaptado a móvil.
+
+## Capturas
+
+| Catálogo | Ficha de producto |
+| --- | --- |
+| ![Catálogo](docs/screenshots/catalogo.png) | ![Producto](docs/screenshots/producto.png) |
+
+| Carrito y pago | Accesorios |
+| --- | --- |
+| ![Carrito](docs/screenshots/carrito.png) | ![Accesorios](docs/screenshots/accesorios.png) |
+
+<p align="center"><img src="docs/screenshots/movil.png" alt="Versión móvil" width="280"></p>
+
+## Tecnologías
+
+- Angular 21 (componentes *standalone*, Signals, router con *lazy loading*, formularios reactivos y por plantilla)
+- TypeScript
+- Bootstrap 5 y Bootstrap Icons
+- Datos de ejemplo en JSON (`public/assets/data`)
+- Despliegue automático en GitHub Pages con GitHub Actions
+
+## Estructura
+
+```
+src/app/
+├── components/     # navbar y footer
+├── pages/          # inicio, catálogo, producto-detalle, accesorios,
+│                   # carrito-pago, login, registro, contacto, about-us, not-found
+├── services/       # ProductosService (datos) y CartService (carrito con Signals)
+├── common/         # interfaces (Producto)
+└── app.routes.ts   # rutas de la aplicación
+public/assets/
+├── data/           # productos.json y accesorios.json
+└── images/         # imágenes de productos y portadas
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Cómo ejecutarlo
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Necesitas Node.js 20 o superior.
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Abre `http://localhost:4200/`.
+
+Para generar la versión de producción:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+## Despliegue
 
-To build the project run:
+Cada vez que se sube un cambio a `main`, el workflow `.github/workflows/deploy.yml` compila la app con `--base-href /frikistore-app/` y la publica en GitHub Pages. También copia `index.html` como `404.html` para que las rutas de Angular funcionen al recargar la página.
 
-```bash
-ng build
-```
+## Próximos pasos
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Guardar el carrito en `localStorage` para no perderlo al recargar.
+- Conectar con una API real (por ejemplo, Node/Express + MongoDB) para productos, usuarios y pedidos.
+- Filtros y buscador en el catálogo.
 
-## Running unit tests
+## Autoría
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyecto en equipo del ciclo formativo. Repositorio de [Álvaro Moreno](https://github.com/alvarodam87).

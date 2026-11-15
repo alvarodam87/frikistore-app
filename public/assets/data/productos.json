@@ -4,15 +4,15 @@
     "nombre": "Goku Ultra Instinto",
     "serie": "Dragon Ball Super",
     "precio": 49.99,
-    "imagen": "/assets/images/figuragoku.jpg",
+    "imagen": "assets/images/figuragoku.jpg",
     "nuevo": true
   },
   {
     "id": 2,
-    "nombre": "MARVEL",
+    "nombre": "Pack Vengadores",
     "serie": "Colección de Marvel",
     "precio": 44.99,
-    "imagen": "/assets/images/figuras.jpg",
+    "imagen": "assets/images/figuras.jpg",
     "nuevo": false
   },
   {
@@ -20,7 +20,7 @@
     "nombre": "Naruto y Sasuke",
     "serie": "Naruto Shippuden",
     "precio": 39.99,
-    "imagen": "/assets/images/figuranaruto2.jpg",
+    "imagen": "assets/images/figuranaruto2.jpg",
     "nuevo": true
   },
   {
@@ -28,7 +28,7 @@
     "nombre": "Monkey D. Luffy Gear 5",
     "serie": "One Piece",
     "precio": 54.99,
-    "imagen": "/assets/images/figuraluffy.jpg",
+    "imagen": "assets/images/figuraluffy.jpg",
     "nuevo": true
   },
   {
@@ -36,7 +36,7 @@
     "nombre": "Zoro Three Swords",
     "serie": "One Piece",
     "precio": 42.99,
-    "imagen": "/assets/images/figuraluffy.jpg",
+    "imagen": "assets/images/figuraluffy.jpg",
     "nuevo": false
   },
   {
@@ -44,7 +44,7 @@
     "nombre": "Claymore",
     "serie": "Claymore",
     "precio": 47.99,
-    "imagen":  "/assets/images/Claymore.jpg",
+    "imagen": "assets/images/Claymore.jpg",
     "nuevo": false
   },
   {
@@ -52,7 +52,7 @@
     "nombre": "Itachi Uchiha",
     "serie": "Naruto Shippuden",
     "precio": 45.99,
-    "imagen": "/assets/images/figuraitachi.jpg",
+    "imagen": "assets/images/figuraitachi.jpg",
     "nuevo": false
   },
   {
@@ -60,7 +60,7 @@
     "nombre": "Tanjiro Kamado",
     "serie": "Demon Slayer",
     "precio": 38.99,
-    "imagen": "/assets/images/demonslayer.webp",
+    "imagen": "assets/images/demonslayer.webp",
     "nuevo": true
   },
   {
@@ -68,15 +68,15 @@
     "nombre": "Nezuko Kamado",
     "serie": "Demon Slayer",
     "precio": 36.99,
-    "imagen": "/assets/images/demonslayer.webp",
+    "imagen": "assets/images/demonslayer.webp",
     "nuevo": false
   },
   {
     "id": 10,
-    "nombre": "MARVEL",
+    "nombre": "Vengadores Edición Coleccionista",
     "serie": "Colección de Marvel",
     "precio": 41.99,
-    "imagen": "/assets/images/figuras.jpg",
+    "imagen": "assets/images/figuras.jpg",
     "nuevo": false
   },
   {
@@ -84,7 +84,7 @@
     "nombre": "Berserk",
     "serie": "Berserk",
     "precio": 49.99,
-    "imagen": "/assets/images/figuraberserk.jpg",
+    "imagen": "assets/images/figuraberserk.jpg",
     "nuevo": true
   },
   {
@@ -92,7 +92,7 @@
     "nombre": "Deku Full Cowling",
     "serie": "My Hero Academia",
     "precio": 43.99,
-    "imagen": "/assets/images/deku.jpg",
+    "imagen": "assets/images/deku.jpg",
     "nuevo": false
   }
 ]
